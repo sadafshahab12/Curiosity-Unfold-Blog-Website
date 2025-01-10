@@ -73,8 +73,17 @@ const Comment = ({ blogId }: { blogId: string }) => {
               onChange={(e) => setUserComment(e.target.value)}
             />
           </div>
+
           <div onClick={() => handleAddComment(blogId)}>
-            <Button btnText="Add Comment" />
+            <button
+              className={`${
+                theme === "dark"
+                  ? "border-fuchsia-300 border bg-slate-800 text-fuchsia-300 hover:bg-transparent "
+                  : "border-slate-800 border bg-slate-800 text-fuchsia-300 hover:bg-transparent hover:text-slate-800"
+              } font-medium py-2 px-4 rounded-md transition-all ease-in duration-300 sm:text-sm text-[0.7rem]`}
+            >
+              Add Comment
+            </button>
           </div>
         </div>
       </div>
