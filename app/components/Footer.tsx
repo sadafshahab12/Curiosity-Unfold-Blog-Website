@@ -103,8 +103,8 @@ const Footer = () => {
         <div>
           <form action="" className="space-y-4">
             <h1 className="text-xl sm:text-2xl font-semibold">Contact Us</h1>
-            <Input placeholder="Email Address" />
-            <Textarea placeholder="Message" />
+            <Input placeholder="Email Address" className="border border-white" />
+            <Textarea placeholder="Message"  className="border border-white"/>
             <Button
               variant={"secondary"}
               className="bg-purple-600 text-white hover:bg-transparent border-white border duration-500"
