@@ -23,7 +23,6 @@ export interface BlogContent {
   asset?: { url: string };
   listItem?: string;
   level?: number;
-
 }
 export interface BlogType {
   _id: string;
@@ -34,25 +33,24 @@ export interface BlogType {
   authorImage: string;
   authorName: string;
   launchedAt: string;
-
 }
 export interface BlogContextType {
   text: string;
 }
-export interface CommentType{
-  userName : string;
+export interface CommentType {
+  userName: string;
   userComment: string;
-  day: string,
-  seconds:string
+  day: string;
+  seconds: string;
 }
 type Theme = "light" | "dark";
 export interface BlogContextType {
   theme: Theme;
   toggleTheme: () => void;
   comments: CommentType[]; // Array of comments
-  userName: string,
-  userComment: string,
-  commentByBlogId: Record<string, CommentType[]>
+  userName: string;
+  userComment: string;
+  commentByBlogId: Record<string, CommentType[]>;
   handleAddComment: (blogId: string) => void; // Function to add a comment
   setUserName: (name: string) => void;
   setUserComment: (comment: string) => void;

@@ -25,9 +25,7 @@ const Loading = () => {
         <p className="p-2 bg-slate-200 rounded-lg w-full"></p>
         <p className="p-2 bg-slate-200 rounded-lg w-full"></p>
       </div>
-      <div className="w-full sm:h-[30rem] xs:h-[25rem] xxs:h-[18rem] h-[14rem] rounded-xl bg-slate-200" >
-
-      </div>
+      <div className="w-full sm:h-[30rem] xs:h-[25rem] xxs:h-[18rem] h-[14rem] rounded-xl bg-slate-200"></div>
     </div>
   );
 };

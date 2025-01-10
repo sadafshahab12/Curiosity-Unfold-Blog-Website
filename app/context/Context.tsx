@@ -78,17 +78,16 @@ export const BlogProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const [theme, setTheme] = useState("light");
-useEffect(()=>{
-const savedThemes = localStorage.getItem("theme") ||  "light";
-setTheme(savedThemes);
-document.documentElement.classList.toggle("dark",savedThemes === "dark" );
-
-},[])
-const toggleTheme = ()=>{
-  const newTheme = theme === "light" ? "dark" : "light";
-  setTheme(newTheme)
-  document.documentElement.classList.toggle("dark" , newTheme === "dark")
-}
+  useEffect(() => {
+    const savedThemes = localStorage.getItem("theme") || "light";
+    setTheme(savedThemes);
+    document.documentElement.classList.toggle("dark", savedThemes === "dark");
+  }, []);
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
+  };
   return (
     <BlogContext.Provider
       value={{
@@ -100,8 +99,7 @@ const toggleTheme = ()=>{
         userComment,
         commentByBlogId,
         theme,
-        toggleTheme
-
+        toggleTheme,
       }}
     >
       {children}

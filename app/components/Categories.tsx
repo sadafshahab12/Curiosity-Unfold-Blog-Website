@@ -14,11 +14,13 @@ const Categories = () => {
           world.
         </p>
       </div>
-      <div >
+      <div>
         <CategoryCard />
       </div>
       <div className="Explore text-center mt-10">
-        <Link href="/blog-post"><Button btnText="Explore More Blog"/></Link>
+        <Link href="/blog-post">
+          <Button btnText="Explore More Blog" />
+        </Link>
       </div>
     </section>
   );

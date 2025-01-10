@@ -1,7 +1,11 @@
 import React from "react";
 import CompleteBlogPost from "../components/ui/CompleteBlogPost";
 import BlogPostHero from "../components/ui/BlogPostHero";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Blog | Curiosity Unfold",
 
+};
 const BlogPostPage = () => {
   return (
     <section>

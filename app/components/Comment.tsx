@@ -17,14 +17,16 @@ const Comment = ({ blogId }: { blogId: string }) => {
     commentByBlogId,
     theme, // Get theme from context
   } = useContext(BlogContext) as BlogContextType;
-  
+
   const commentbyid = commentByBlogId[blogId] || [];
-  
+
   return (
     <div>
       <div
         className={`${
-          theme === "dark" ? "bg-gray-800 text-white" : "bg-commentBg text-black"
+          theme === "dark"
+            ? "bg-gray-800 text-white"
+            : "bg-commentBg text-black"
         } bg-no-repeat bg-center bg-cover border py-5 sm:px-10 px-5 rounded-lg shadow-lg sm:mt-10 mt-5`}
       >
         <h1
@@ -76,7 +78,7 @@ const Comment = ({ blogId }: { blogId: string }) => {
           </div>
         </div>
       </div>
-      
+
       {/* Display comments */}
       <div>
         <h1

@@ -14,7 +14,6 @@ const BlogPostHero = () => {
           alt="blog-bg"
           width={800}
           height={800}
-          
         />
         <Image
           src="/images/blog-post-page/minim.jpg"
@@ -29,7 +28,6 @@ const BlogPostHero = () => {
           width={800}
           height={800}
           className="h-full object-cover sm:block hidden"
-
         />
       </div>
       <div className="content lg:p-10 p-5 sm:space-y-8 space-y-4">
