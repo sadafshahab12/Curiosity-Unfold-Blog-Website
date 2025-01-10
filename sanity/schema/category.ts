@@ -1,5 +1,4 @@
 import { defineField, defineType } from "sanity";
-import { UserIcon } from "@sanity/icons";
 import ExternalLinkRenderer from "../../sanityComp/ExternalLink";
 import { unsplashAssetSource } from "sanity-plugin-asset-source-unsplash";
 
