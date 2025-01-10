@@ -45,7 +45,10 @@ export interface CommentType{
   day: string,
   seconds:string
 }
+type Theme = "light" | "dark";
 export interface BlogContextType {
+  theme: Theme;
+  toggleTheme: () => void;
   comments: CommentType[]; // Array of comments
   userName: string,
   userComment: string,
