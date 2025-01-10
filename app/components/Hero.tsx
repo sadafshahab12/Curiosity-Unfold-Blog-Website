@@ -16,7 +16,7 @@ const Hero = () => {
     : "";
 
   return (
-    <div className="flex justify-center items-center bg-heroBg bg-cover bg-center bg-no-repeat sm:pt-20 xxs:pt-10 pt-20 sm:pb-10 pb-5  sm:px-10 px-5  md:h-[33rem] xxs:h-[28rem]  h-[28rem] ">
+    <div className="flex justify-center items-center bg-heroBg bg-cover bg-center bg-no-repeat sm:pt-20 xxs:pt-10 pt-20 sm:pb-10 pb-5  sm:px-10 px-5  md:h-[37rem] xxs:h-[28rem]  h-[28rem] ">
       <div className="md:space-y-8 space-y-4 text-center ">
         {isSignedIn ? (
           <p className="xs:text-xl text-[0.9rem] tracking-widest">
