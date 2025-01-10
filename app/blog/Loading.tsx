@@ -2,7 +2,7 @@ import React from "react";
 
 const Loading = () => {
   return (
-    <div className="max-w-4xl mx-auto md:py-20 py-8 md:px-10 xxs:px-8 px-6 space-y-3">
+    <div className="max-w-4xl mx-auto md:py-20 py-16 md:px-10 xxs:px-8 px-6 space-y-3">
       <h1 className="bg-slate-200 p-5 rounded-lg"></h1>
       <p className="bg-slate-200 p-10 rounded-lg"></p>
       <div className="flex items-center gap-4">
