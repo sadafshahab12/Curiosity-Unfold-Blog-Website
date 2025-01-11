@@ -8,7 +8,7 @@ const BlogPostHero = () => {
   const { text } = useContext(BlogContext) as BlogContextType;
   return (
     <>
-      <div className="bgs grid sm:grid-cols-3 xxs:grid-cols-2 grid-cols-1 opacity-70 pt-16">
+      <div className="grid sm:grid-cols-3 xxs:grid-cols-2 grid-cols-1 opacity-70 pt-14">
         <Image
           src="/images/blog-post-page/bg1.webp"
           alt="blog-bg"
