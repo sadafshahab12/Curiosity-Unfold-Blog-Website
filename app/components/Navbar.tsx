@@ -8,12 +8,15 @@ const Navbar = () => {
   // const [isLoggedIn, setIsLoggedin] = useState(true);
   const { isSignedIn, isLoaded } = useUser();
   const [left, setLeft] = useState("-100%");
+
   const toggleNav = () => {
     setLeft((prevLeft) => (prevLeft === "-100%" ? "0" : "-100%"));
   };
   const closeNav = () => {
     setLeft("-100%");
   };
+
+
   return (
     <header>
       <nav className="flex items-center justify-between bg-slate-800 lg:px-10 px-5 py-3 fixed w-full z-40">
@@ -93,7 +96,7 @@ const Navbar = () => {
         <div>
           {isLoaded &&
             (isSignedIn ? (
-              <UserButton afterSwitchSessionUrl="/" />
+              <UserButton afterSignOutUrl="/"/>
             ) : (
               <Link href="/sign-in">
                 <button className="border border-fuchsia-300  py-1 xs:px-4 px-2 rounded-md text-fuchsia-300 hover:bg-slate-900 xs:text-sm text-[0.7rem] active:scale-95 transition-all ease-in duration-300">
