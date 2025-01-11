@@ -96,7 +96,7 @@ const Navbar = () => {
         <div>
           {isLoaded &&
             (isSignedIn ? (
-              <UserButton afterSignOutUrl="/"/>
+              <UserButton afterSignOutUrl="/" />
             ) : (
               <Link href="/sign-in">
                 <button className="border border-fuchsia-300  py-1 xs:px-4 px-2 rounded-md text-fuchsia-300 hover:bg-slate-900 xs:text-sm text-[0.7rem] active:scale-95 transition-all ease-in duration-300">
