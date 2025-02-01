@@ -77,6 +77,39 @@ export const BlogProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  const handleEditComment = (
+    blogId: string,
+    index: number,
+    newComment: string
+  ) => {
+    setCommentsByBlogId((prev) => {
+      const updatedComments = [...(prev[blogId] || [])];
+      if (updatedComments[index]) {
+        updatedComments[index] = {
+          ...updatedComments[index],
+          userComment: newComment,
+        };
+        console.log("Updated Comment:", updatedComments[index]); // Debugging
+      } else {
+        console.error("Invalid index:", index);
+      }
+      return {
+        ...prev,
+        [blogId]: updatedComments,
+      };
+    });
+  };
+
+  const handleDeleteComment = (blogId: string, index: number) => {
+    setCommentsByBlogId((prev) => {
+      const updatedComments = [...(prev[blogId] || [])];
+      updatedComments.splice(index, 1);
+      return {
+        ...prev,
+        [blogId]: updatedComments,
+      };
+    });
+  };
   const [theme, setTheme] = useState("light");
   useEffect(() => {
     const savedThemes = localStorage.getItem("theme") || "light";
@@ -100,6 +133,8 @@ export const BlogProvider = ({ children }: { children: ReactNode }) => {
         commentByBlogId,
         theme,
         toggleTheme,
+        handleDeleteComment,
+        handleEditComment,
       }}
     >
       {children}

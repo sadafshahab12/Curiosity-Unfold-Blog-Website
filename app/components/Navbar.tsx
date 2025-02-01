@@ -16,7 +16,6 @@ const Navbar = () => {
     setLeft("-100%");
   };
 
-
   return (
     <header>
       <nav className="flex items-center justify-between bg-slate-800 lg:px-10 px-5 py-3 fixed w-full z-40">

@@ -1,11 +1,13 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { BlogContext } from "../context/Context";
 import { BlogContextType } from "../type/dataType";
 import { Globe } from "lucide-react";
-
+import { CiEdit } from "react-icons/ci";
+import { IoMdTrash } from "react-icons/io";
+import { FaSave } from "react-icons/fa";
 const Comment = ({ blogId }: { blogId: string }) => {
   const {
     handleAddComment,
@@ -13,11 +15,25 @@ const Comment = ({ blogId }: { blogId: string }) => {
     setUserName,
     userName,
     userComment,
+    handleDeleteComment,
+    handleEditComment,
     commentByBlogId,
     theme, // Get theme from context
   } = useContext(BlogContext) as BlogContextType;
 
   const commentbyid = commentByBlogId[blogId] || [];
+  const [editingIndex, setEditingIndex] = useState<number | null>(null);
+  const [editedComment, setEditedComment] = useState<string>("");
+
+  const handleEditClick = (index: number, comment: string) => {
+    setEditingIndex(index);
+    setEditedComment(comment);
+  };
+
+  const handleSaveEdit = (blogId: string, index: number) => {
+    handleEditComment(blogId, index, editedComment);
+    setEditingIndex(null);
+  };
 
   return (
     <div>
@@ -135,14 +151,49 @@ const Comment = ({ blogId }: { blogId: string }) => {
                         }`}
                       />
                     </div>
+                    {editingIndex === index ? (
+                      <input
+                        type="text"
+                        value={editedComment}
+                        onChange={(e) => setEditedComment(e.target.value)}
+                        className={`w-full border p-2 rounded-md ${
+                          theme === "dark"
+                            ? "bg-gray-700 text-white"
+                            : "bg-white text-black"
+                        }`}
+                      />
+                    ) : (
+                      <p
+                        className={`${
+                          theme === "dark" ? "text-slate-300" : "text-gray-500"
+                        } text-sm`}
+                      >
+                        {usercomment.userComment}
+                      </p>
+                    )}
 
-                    <p
-                      className={`${
-                        theme === "dark" ? "text-slate-300" : "text-gray-500"
-                      } text-sm`}
-                    >
-                      {usercomment.userComment}
-                    </p>
+                    <div className=" py-3 flex gap-4 items-center">
+                      {editingIndex === index ? (
+                        <button
+                          onClick={() => handleSaveEdit(blogId, index)}
+                          className="px-3 py-1 bg-purple-400 text-white rounded text-sm flex gap-2 items-center"
+                        >
+                          Save <FaSave />
+                        </button>
+                      ) : (
+                        <CiEdit
+                          className="w-5 h-5 cursor-pointer"
+                          onClick={() =>
+                            handleEditClick(index, usercomment.userComment)
+                          }
+                        />
+                      )}
+
+                      <IoMdTrash
+                        className="w-5 h-5 cursor-pointer"
+                        onClick={() => handleDeleteComment(blogId, index)}
+                      />
+                    </div>
                   </div>
                 </div>
                 <div

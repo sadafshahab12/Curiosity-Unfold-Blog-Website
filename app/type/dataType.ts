@@ -49,6 +49,12 @@ export interface BlogContextType {
   toggleTheme: () => void;
   comments: CommentType[]; // Array of comments
   userName: string;
+  handleDeleteComment: (blogId: string, index: number) => void; // Function to delete a comment
+  handleEditComment: (
+    blogId: string,
+    index: number,
+    newComment: string
+  ) => void; // Function to edit a comment
   userComment: string;
   commentByBlogId: Record<string, CommentType[]>;
   handleAddComment: (blogId: string) => void; // Function to add a comment
